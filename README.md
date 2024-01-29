@@ -1,7 +1,3 @@
-API DOC
-
-https://documenter.getpostman.com/view/13370431/2s9YysBM9i
-
 
 TASK : 
 Pada task akhir VIX Full Stack Developer ini kalian diarahkan untuk membentuk API berdasarkan kasus yang telah diberikan. Pada kasus ini, kalian diinstruksikan untuk membuat API untuk mengupload dan menghapus gambar. API yang kalian bentuk adalah POST, GET, PUT, dan DELETE.
@@ -24,8 +20,6 @@ Pada task akhir VIX Full Stack Developer ini kalian diarahkan untuk membentuk AP
 			Package yang disediakan golang untuk generating hash dari password dan memverifikasi password terhadap hash yang tersimpan.
 			•	Mux :
 			Package yang disediakan golang sebagai router untuk HTTP server. Biasanya package ini digunakan untuk memproses request HTTP seperti CRUD dalam API. Mux juga dapat memungkinkan developer untuk 										mendefinisikan handler berbeda untuk menangani request HTTP berdasarkan kebutuhan.
-
-
 
 
 
@@ -52,3 +46,9 @@ Pada task akhir VIX Full Stack Developer ini kalian diarahkan untuk membentuk AP
 					Saya menggunakan port 8080 untuk menjalankan API
 			•	Configuration JWT
 					Configuration secret key dan juga struktur data untuk payload JWT
+
+
+
+ API DOC
+
+https://documenter.getpostman.com/view/13370431/2s9YysBM9i
