@@ -11,7 +11,6 @@ import (
 )
 
 func Index(w http.ResponseWriter, r *http.Request) {
-	// Deklarasi slice untuk menampung semua foto
 	photos := &[]models.Photo{}
 
 	// Ambil semua foto dari database
@@ -31,19 +30,11 @@ func Show(w http.ResponseWriter, r *http.Request) {
 	vars := mux.Vars(r)
 	Photo := vars["id"]
 
-	// Decode updated user data from request body
 	photo := &models.Photo{}
-	decoder := json.NewDecoder(r.Body)
-	err := decoder.Decode(&photo)
-	if err != nil {
-		http.Error(w, err.Error(), http.StatusBadRequest)
-		return
-	}
-	defer r.Body.Close()
 
 	if err := models.DB.First(&photo, Photo).Error; err != nil {
 		if err == gorm.ErrRecordNotFound {
-			http.Error(w, "Data Tidak Ditemukan", http.StatusNotFound)
+			http.Error(w, "Data tidak ditemukan", http.StatusNotFound)
 			return
 		}
 		http.Error(w, err.Error(), http.StatusInternalServerError)
@@ -117,6 +108,6 @@ func Delete(w http.ResponseWriter, r *http.Request) {
 	}
 
 	// Kirim response JSON bahwa data berhasil dihapus
-	w.WriteHeader(http.StatusOK)
-	json.NewEncoder(w).Encode(map[string]string{"message": "Data sudah dihapus!!"})
+	response := map[string]string{"message": "Data Berhasil Dihapus!"}
+	helper.ResponseJSON(w, http.StatusOK, response)
 }
